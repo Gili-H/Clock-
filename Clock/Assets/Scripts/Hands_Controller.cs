@@ -5,13 +5,24 @@ using UnityEngine;
 public class Hands_Controller : MonoBehaviour
 {
     
-    private float RotationSpeed = 0.1f;
+    private float RotationSpeed = 0.2f;
+
+    [SerializeField]
+    private GameObject tzir;
+
+    [SerializeField]
+    private float angle;
+    public float Angle
+    {
+        get { return angle; }
+        set { angle = value; }
+    }
 
     private void OnMouseDrag()
     {
-        //float rotX = Input.GetAxis("Mouse X") * RotationSpeed;
         float rotX = Input.GetAxis("Mouse Y") * RotationSpeed;
-        //transform.Rotate(Vector3.up, -rotX);
-        transform.RotateAround(Vector3.forward, rotX);
+        tzir.transform.RotateAround(Vector3.forward, rotX);
+
+        angle = gameObject.transform.rotation.eulerAngles.z;
     }
 }
