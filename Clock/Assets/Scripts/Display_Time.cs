@@ -14,6 +14,12 @@ public class Display_Time : MonoBehaviour
 
     [SerializeField]
     private int hour;
+    public int Hour
+        {
+            get { return hour; }
+            set { hour = value; }
+        }
+    
     private int minute;
 
     private int x;
@@ -55,7 +61,7 @@ public class Display_Time : MonoBehaviour
 
         if (w == hour)
         {
-            Debug.Log("hour");
+            //Debug.Log("hour");
         }
 
         //angle_h2 = transform.rotation.eulerAngles.z;
@@ -66,7 +72,7 @@ public class Display_Time : MonoBehaviour
 
         if (u == minute)
         {
-            Debug.Log("minute");
+            //Debug.Log("minute");
         }
 
 
